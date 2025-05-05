@@ -9,7 +9,7 @@ filterwarnings = [
   "ignore::DeprecationWarning",
   "ignore::UserWarning",
 ]
-log_cli = "True"
+log_cli = true
 markers = [
   "slow: slow tests",
 ]
@@ -23,3 +23,14 @@ exclude_lines = [
     "raise NotImplementedError()",
     "if __name__ == .__main__.:",
 ]
+
+[tool.ruff]
+line-length = 99
+exclude = ["logs/*","data/*"]
+
+[tool.ruff.lint]
+extend-select = ["UP", "I", "S"]
+ignore = ["E203", "E402", "E501", "F841", "S101"]
+
+[tool.ruff.format]
+docstring-code-format = true
